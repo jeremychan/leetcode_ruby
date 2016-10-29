@@ -1,10 +1,10 @@
-require 'test/unit'
-require_relative '112_path_sum'
-require_relative 'common/tree_node'
+require 'spec_helper'
+require '112_path_sum'
+require 'common/tree_node'
 
-class PathSumTest < Test::Unit::TestCase
+describe 'PathSumSpec' do
 
-  def setup
+  before :each do
     a = TreeNode.initialize_with_children(7, nil, nil)
     b = TreeNode.initialize_with_children(2, nil, nil)
     c = TreeNode.initialize_with_children(11, a, b)
@@ -16,12 +16,12 @@ class PathSumTest < Test::Unit::TestCase
     @root = TreeNode.initialize_with_children(5, d, h)
   end
 
-  def test_true
-    assert_true(has_path_sum(@root, 22))
-      # assert_true(has_path_sum(@root, 25))
+  it 'can return true when find sum' do
+    expect(has_path_sum(@root, 22)).to eq true
   end
 
-  def test_false
-    assert_false(has_path_sum(@root, 21))
+  it 'can return false when cannot find sum' do
+    expect(has_path_sum(@root, 21)).to eq false
   end
+
 end

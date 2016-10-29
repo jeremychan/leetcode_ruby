@@ -1,4 +1,4 @@
 source 'http://rubygems.org'
 
-gem 'test-unit'
-gem 'minitest'
+# Specify your gem's dependencies in leetcode_ruby.gemspec
+gemspec

@@ -11,4 +11,3 @@ def reverse(x)
   end
   return res >= FIXNUM_MAX || res <= FIXNUM_MIN ? 0 : res
 end
-
